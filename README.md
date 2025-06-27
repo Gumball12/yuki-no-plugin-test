@@ -4,9 +4,7 @@ A test plugin for [yuki-no](https://github.com/Gumball12/yuki-no) that demonstra
 
 ## Installation
 
-```bash
-pnpm add @gumball12/yuki-no-plugin-test
-```
+If you're using this as a Yuki-no plugin, you can use it without installation. For more details, please refer to the [Yuki-no Using Plugins documentation](https://github.com/Gumball12/yuki-no/blob/main/PLUGINS.md#using-plugins).
 
 ## Usage
 
