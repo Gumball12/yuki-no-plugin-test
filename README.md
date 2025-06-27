@@ -14,16 +14,16 @@ Add the plugin to your yuki-no workflow:
 
 ```yaml
 - uses: Gumball12/yuki-no@v1
+  env:
+    # Optional: Custom plugin message
+    PLUGIN_MESSAGE: 'Translated by our team'
+    DEBUG_MODE: true
   with:
     access-token: ${{ secrets.GITHUB_TOKEN }}
     head-repo: https://github.com/source/repository.git
     track-from: commit-hash
     plugins: |
       @gumball12/yuki-no-plugin-test
-
-    # Optional: Custom plugin message
-    plugin-message: 'Translated by our team'
-    debug-mode: 'true'
 ```
 
 ## What it does

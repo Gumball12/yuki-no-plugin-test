@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@gumball12/yuki-no':
-        specifier: ^1.1.1
-        version: 1.1.1(@octokit/core@6.1.5)
+        specifier: ^1.4.0
+        version: 1.4.0(@octokit/core@6.1.5)
     devDependencies:
       '@types/node':
         specifier: ^24.0.4
@@ -207,8 +207,8 @@ packages:
     resolution: {integrity: sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==}
     engines: {node: '>=14'}
 
-  '@gumball12/yuki-no@1.1.1':
-    resolution: {integrity: sha512-HMTF4CLspbky6vAKz9gIqN8BBcgxv3lzrUmMwpnrXhVTDDTpwbiSRbpOuQ2GrOI4MteiWHaaYMfPTKf7PSAwQA==}
+  '@gumball12/yuki-no@1.4.0':
+    resolution: {integrity: sha512-SimeYVJ6L7q0p5m1dFSbdVPJP1CalJSG8Al3SNCueFq0rAwb3zimh+1odUHtXciJizsoSWCt/o69qekAulgxNQ==}
 
   '@jridgewell/sourcemap-codec@1.5.0':
     resolution: {integrity: sha512-gv3ZRaISU3fjPAgNsriBRqGWQL6quFx04YMPW/zD8XMLsU32mhCCbfbO6KZFLjvYpCZ8zyDEgqsgf+PwPaM7GQ==}
@@ -1046,7 +1046,7 @@ snapshots:
 
   '@fastify/busboy@2.1.1': {}
 
-  '@gumball12/yuki-no@1.1.1(@octokit/core@6.1.5)':
+  '@gumball12/yuki-no@1.4.0(@octokit/core@6.1.5)':
     dependencies:
       '@actions/github': 6.0.1
       '@octokit/plugin-retry': 7.2.1(@octokit/core@6.1.5)

@@ -1,4 +1,8 @@
-import { type YukiNoPlugin } from '@gumball12/yuki-no';
+import {
+  getBooleanInput,
+  getInput,
+  type YukiNoPlugin,
+} from '@gumball12/yuki-no';
 
 /**
  * Test plugin demonstrating all yuki-no lifecycle hooks
@@ -13,13 +17,14 @@ const plugin: YukiNoPlugin = {
     );
 
     // Handle custom message input
-    const customMessage = ctx.inputs['plugin-message'];
+    const customMessage = getInput('PLUGIN_MESSAGE');
     if (customMessage) {
       console.log(`[${plugin.name}] 💬 Custom message: ${customMessage}`);
     }
 
     // Enable debug mode if requested
-    if (ctx.inputs['debug-mode'] === 'true') {
+    const debugMode = getBooleanInput('DEBUG_MODE');
+    if (debugMode) {
       console.log(`[${plugin.name}] 🐛 Debug mode enabled`);
     }
   },
@@ -27,7 +32,7 @@ const plugin: YukiNoPlugin = {
   async onBeforeCompare(ctx) {
     console.log(`[${plugin.name}] 🔍 Starting comparison process`);
     console.log(
-      `[${plugin.name}] Tracking from: ${ctx.inputs['track-from'] || 'not set'}`,
+      `[${plugin.name}] Tracking from: ${ctx.config.trackFrom || 'not set'}`,
     );
   },
 
@@ -58,7 +63,7 @@ const plugin: YukiNoPlugin = {
 
     // Add enhancement comment
     try {
-      const customMessage = ctx.inputs['plugin-message'] || '';
+      const customMessage = getInput('PLUGIN_MESSAGE', '');
 
       await ctx.octokit.rest.issues.createComment({
         owner: ctx.context.repo.owner,
