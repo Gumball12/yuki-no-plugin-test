@@ -44,6 +44,8 @@ Add the plugin to your yuki-no workflow:
 [yuki-no-test-plugin] 🏁 Process completed successfully
 ```
 
+You can see these logs in your GitHub Actions workflow run logs.
+
 ## Related Links
 
 - [yuki-no GitHub Action](https://github.com/Gumball12/yuki-no)
