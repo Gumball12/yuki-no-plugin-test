@@ -15,7 +15,11 @@ Add the plugin to your yuki-no workflow:
   env:
     # Optional: Custom plugin message
     PLUGIN_MESSAGE: 'Translated by our team'
-    DEBUG_MODE: true
+    PLUGIN_DEBUG_MODE: true
+    PLUGIN_MULTILINE_VALUE: |
+      value 1
+      value 2
+      value 3
   with:
     access-token: ${{ secrets.GITHUB_TOKEN }}
     head-repo: https://github.com/source/repository.git

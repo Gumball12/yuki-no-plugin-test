@@ -1,6 +1,7 @@
 import {
   getBooleanInput,
   getInput,
+  getMultilineInput,
   type YukiNoPlugin,
 } from '@gumball12/yuki-no';
 
@@ -23,9 +24,17 @@ const plugin: YukiNoPlugin = {
     }
 
     // Enable debug mode if requested
-    const debugMode = getBooleanInput('DEBUG_MODE');
+    const debugMode = getBooleanInput('PLUGIN_DEBUG_MODE');
     if (debugMode) {
       console.log(`[${plugin.name}] 🐛 Debug mode enabled`);
+    }
+
+    // Check multiline value
+    const multilineValue = getMultilineInput('PLUGIN_MULTILINE_VALUE');
+    if (multilineValue) {
+      console.log(
+        `[${plugin.name}] ↕️ Multiline value: ${multilineValue.join(', ')}`,
+      );
     }
   },
 
