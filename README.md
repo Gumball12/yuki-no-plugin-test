@@ -4,7 +4,7 @@ A test plugin for [yuki-no](https://github.com/Gumball12/yuki-no) that demonstra
 
 ## Installation
 
-If you're using this as a Yuki-no plugin, you can use it without installation. For more details, please refer to the [Yuki-no Using Plugins documentation](https://github.com/Gumball12/yuki-no/blob/main/PLUGINS.md#using-plugins).
+If you're using this as a Yuki-no plugin, you can use it without installation. For more details, please refer to the [Yuki-no Using Plugins documentation](https://github.com/Gumball12/yuki-no/blob/main/docs/PLUGINS.md#using-plugins).
 
 ## Usage
 
@@ -53,4 +53,4 @@ You can see these logs in your GitHub Actions workflow run logs.
 ## Related Links
 
 - [yuki-no GitHub Action](https://github.com/Gumball12/yuki-no)
-- [Plugin Development Guide](https://github.com/Gumball12/yuki-no/blob/main/PLUGINS.md)
+- [Plugin Development Guide](https://github.com/Gumball12/yuki-no/blob/main/docs/PLUGINS.md)
