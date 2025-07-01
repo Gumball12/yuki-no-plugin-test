@@ -25,7 +25,7 @@ Add the plugin to your yuki-no workflow:
     head-repo: https://github.com/source/repository.git
     track-from: commit-hash
     plugins: |
-      @gumball12/yuki-no-plugin-test
+      @gumball12/yuki-no-plugin-test@0.0.4
 ```
 
 ## What it does
