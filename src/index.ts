@@ -1,9 +1,12 @@
+import { GitHub } from '@yuki-no/plugin-sdk/infra/github';
+import type { YukiNoPlugin } from '@yuki-no/plugin-sdk/types/plugin';
 import {
   getBooleanInput,
   getInput,
   getMultilineInput,
-  type YukiNoPlugin,
-} from '@gumball12/yuki-no';
+} from '@yuki-no/plugin-sdk/utils/input';
+
+let github: GitHub;
 
 /**
  * Test plugin demonstrating all yuki-no lifecycle hooks
@@ -13,9 +16,11 @@ const plugin: YukiNoPlugin = {
 
   async onInit(ctx) {
     console.log(`[${plugin.name}] 🚀 Plugin initialized`);
-    console.log(
-      `[${plugin.name}] Repository: ${ctx.context.repo.owner}/${ctx.context.repo.repo}`,
-    );
+
+    github = new GitHub({
+      ...ctx.config,
+      repoSpec: ctx.config.upstreamRepoSpec,
+    });
 
     // Handle custom message input
     const customMessage = getInput('PLUGIN_MESSAGE');
@@ -68,16 +73,15 @@ const plugin: YukiNoPlugin = {
   },
 
   async onAfterCreateIssue(ctx) {
-    console.log(`[${plugin.name}] 🎉 Issue #${ctx.result.number} created`);
+    console.log(`[${plugin.name}] 🎉 Issue #${ctx.issue.number} created`);
 
     // Add enhancement comment
     try {
       const customMessage = getInput('PLUGIN_MESSAGE', '');
 
-      await ctx.octokit.rest.issues.createComment({
-        owner: ctx.context.repo.owner,
-        repo: ctx.context.repo.repo,
-        issue_number: ctx.result.number,
+      await github.api.rest.issues.createComment({
+        ...github.ownerAndRepo,
+        issue_number: ctx.issue.number,
         body: `🤖 **Enhanced by ${plugin.name}**
 
 - **Commit**: \`${ctx.commit.hash}\`
@@ -96,7 +100,7 @@ const plugin: YukiNoPlugin = {
     }
   },
 
-  async onExit(ctx) {
+  async onFinally(ctx) {
     console.log(
       `[${plugin.name}] 🏁 Process ${ctx.success ? 'completed successfully' : 'finished with errors'}`,
     );
