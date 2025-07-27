@@ -14,9 +14,9 @@ Add the plugin to your yuki-no workflow:
 - uses: Gumball12/yuki-no@v1
   env:
     # Optional: Custom plugin message
-    PLUGIN_MESSAGE: 'Translated by our team'
-    PLUGIN_DEBUG_MODE: true
-    PLUGIN_MULTILINE_VALUE: |
+    YUKI_NO_TEST_MESSAGE: 'Translated by our team'
+    YUKI_NO_TEST_DEBUG_MODE: true
+    YUKI_NO_TEST_MULTILINE_VALUE: |
       value 1
       value 2
       value 3
@@ -25,7 +25,7 @@ Add the plugin to your yuki-no workflow:
     head-repo: https://github.com/source/repository.git
     track-from: commit-hash
     plugins: |
-      @gumball12/yuki-no-plugin-test@0.0.4
+      @gumball12/yuki-no-plugin-test@0.0.6
 ```
 
 ## What it does

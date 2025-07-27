@@ -23,19 +23,19 @@ const plugin: YukiNoPlugin = {
     });
 
     // Handle custom message input
-    const customMessage = getInput('PLUGIN_MESSAGE');
+    const customMessage = getInput('YUKI_NO_TEST_MESSAGE');
     if (customMessage) {
       console.log(`[${plugin.name}] 💬 Custom message: ${customMessage}`);
     }
 
     // Enable debug mode if requested
-    const debugMode = getBooleanInput('PLUGIN_DEBUG_MODE');
+    const debugMode = getBooleanInput('YUKI_NO_TEST_DEBUG_MODE');
     if (debugMode) {
       console.log(`[${plugin.name}] 🐛 Debug mode enabled`);
     }
 
     // Check multiline value
-    const multilineValue = getMultilineInput('PLUGIN_MULTILINE_VALUE');
+    const multilineValue = getMultilineInput('YUKI_NO_TEST_MULTILINE_VALUE');
     if (multilineValue) {
       console.log(
         `[${plugin.name}] ↕️ Multiline value: ${multilineValue.join(', ')}`,
@@ -77,7 +77,7 @@ const plugin: YukiNoPlugin = {
 
     // Add enhancement comment
     try {
-      const customMessage = getInput('PLUGIN_MESSAGE', '');
+      const customMessage = getInput('YUKI_NO_TEST_MESSAGE', '');
 
       await github.api.rest.issues.createComment({
         ...github.ownerAndRepo,
